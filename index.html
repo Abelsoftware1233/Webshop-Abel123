@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LUXE — Webshop</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-inner">
+      <div class="logo">LUXE<span>.</span></div>
+      <nav>
+        <a href="#shop">Shop</a>
+        <a href="#about">Over ons</a>
+      </nav>
+      <button class="cart-btn" id="cartBtn" aria-label="Winkelmandje">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-label">Nieuwe collectie 2026</p>
+      <h1>Tijdloze<br/><em>Elegantie</em></h1>
+      <p class="hero-sub">Handgeselecteerde producten van uitzonderlijke kwaliteit</p>
+      <a href="#shop" class="btn-primary">Ontdek de collectie</a>
+    </div>
+    <div class="hero-scroll">Scroll ↓</div>
+  </section>
+
+  <!-- SHOP GRID -->
+  <section id="shop" class="shop-section">
+    <div class="section-header">
+      <p class="section-label">Onze selectie</p>
+      <h2>Uitgelichte <em>producten</em></h2>
+    </div>
+
+    <div class="products-grid" id="productsGrid">
+      <!-- Producten worden door JS gegenereerd -->
+    </div>
+  </section>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Uw mandje</h3>
+      <button class="close-cart" id="closeCart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <p>Uw mandje is leeg</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-subtotals">
+        <div class="cart-line">
+          <span>Subtotaal</span>
+          <span id="cartSubtotal">€0,00</span>
+        </div>
+        <div class="cart-line">
+          <span>BTW (21%)</span>
+          <span id="cartTax">€0,00</span>
+        </div>
+        <div class="cart-line total">
+          <span>Totaal</span>
+          <span id="cartTotal">€0,00</span>
+        </div>
+      </div>
+
+      <!-- PayPal Button -->
+      <div id="paypal-button-container"></div>
+      <p class="secure-note">🔒 Veilig afrekenen via PayPal</p>
+    </div>
+  </aside>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal-overlay" id="successModal" style="display:none;">
+    <div class="modal">
+      <div class="modal-icon">✓</div>
+      <h3>Bestelling bevestigd!</h3>
+      <p id="successMsg">Bedankt voor uw aankoop. U ontvangt een bevestiging per e-mail.</p>
+      <button class="btn-primary" id="closeModal">Verder winkelen</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="logo">LUXE<span>.</span></div>
+      <p>© 2026 LUXE Webshop — Alle rechten voorbehouden</p>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Leveringsinfo</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PayPal SDK (Sandbox) -->
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR"></script>
+  <script src="script.js"></script>
+</body>
+</html>
